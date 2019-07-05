@@ -68,10 +68,9 @@
             {{csrf_field()}}
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" placeholder="Full name" name="name">
+                {{$errors->first('name')}}
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                @if ($errors->has('name'))
-                    {{$errors->first('name')}}
-                @endif
+
             </div>
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" placeholder="Email" name="email">

@@ -40,10 +40,13 @@
             @csrf
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" placeholder="Name" name="name">
+                <div class="" style="color: red;"> {{$errors->first('name')}} </div>
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" placeholder="Phone" name="phone">
+                <div class="" style="color: red;"> {{$errors->first('phone')}} </div>
+
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
 
@@ -54,16 +57,17 @@
 
             <div class="form-group has-feedback">
                 <input type="email" class="form-control" placeholder="Email" name="email">
+                <div class="" style="color: red;"> {{$errors->first('email')}} </div>
+
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
 
 
             <div class="form-group has-feedback">
                 <input type="password" class="form-control" placeholder="Password" name="password">
+                <div class="" style="color: red;"> {{$errors->first('password')}} </div>
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                @if ($errors->has('Password'))
-                    {{$errors->first('Password')}}
-                @endif
+
             </div>
             <div class="row">
                 <div class="col-xs-8">
@@ -91,7 +95,7 @@
         <!-- /.social-auth-links -->
 
 
-        <a href="{{'register'}}" class="text-center">Register a new membership</a>
+{{--        <a href="{{'register'}}" class="text-center">Register a new membership</a>--}}
 
     </div>
     <!-- /.login-box-body -->

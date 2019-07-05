@@ -43,6 +43,13 @@ class AuthController extends Controller
         }
     public function MemberRegister(Request $request)
     {
+        $valid=$request->validate([
+            'name'=>'required',
+            'phone'=>'required',
+            'email'=>'required',
+            'password'=>'required',
+        ]);
+
         $user=new User();
         $user->name=$request->name;
         $user->phone=$request->phone;
