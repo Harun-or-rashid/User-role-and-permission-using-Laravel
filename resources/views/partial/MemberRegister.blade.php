@@ -43,6 +43,13 @@
                 <div class="" style="color: red;"> {{$errors->first('name')}} </div>
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
+
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" placeholder="Pease write 'Member'" name="user_type">
+                <div class="" style="color: red;"> {{$errors->first('user_type')}} </div>
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" placeholder="Phone" name="phone">
                 <div class="" style="color: red;"> {{$errors->first('phone')}} </div>

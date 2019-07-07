@@ -48,17 +48,22 @@ class AuthController extends Controller
             'phone'=>'required',
             'email'=>'required',
             'password'=>'required',
+            'user_type'=>'required',
+            'address'=>'',
+
         ]);
 
-        $user=new User();
-        $user->name=$request->name;
-        $user->phone=$request->phone;
-        $user->email=$request->email;
-        $user->user_type=1;
-        $user->address=$request->address;
-        $user->password=bcrypt($request->password);
-        $user->save();
-//        return redirect()->route('register');
+        User::create($valid);
+
+
+//        $user->name=$request->name;
+//        $user->phone=$request->phone;
+//        $user->email=$request->email;
+//        $user->user_type=1;
+//        $user->address=$request->address;
+//        $user->password=bcrypt($request->password);
+//        $user->save();
+////        return redirect()->route('register');
         return redirect('registration');
     }
 
